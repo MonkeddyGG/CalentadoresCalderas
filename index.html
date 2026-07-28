@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Calentadores Calderas | Soluciones de Agua Caliente y Vapor</title>
     <link rel="stylesheet" href="style.css">
+    <!-- Enlace a Font Awesome para los iconos -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 
 <body>
@@ -16,14 +18,29 @@
                 <img src="assets/logo calentadores calderas.png" alt="Logo Calentadores Calderas" class="logo-img">
                 <h2>Calentadores <span>Calderas</span></h2>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#inicio">Inicio</a></li>
-                    <li><a href="#nosotros">Nosotros</a></li>
-                    <li><a href="#servicios">Servicios</a></li>
-                    <li><a href="#contacto">Contacto</a></li>
-                </ul>
-            </nav>
+
+            <!-- Botón de menú para móviles -->
+            <div class="menu-toggle" id="mobile-menu">
+                <i class="fa-solid fa-bars"></i>
+            </div>
+
+            <!-- Contenedor del menú y redes -->
+            <div class="nav-right" id="nav-menu">
+                <nav>
+                    <ul>
+                        <li><a href="#inicio">Inicio</a></li>
+                        <li><a href="#nosotros">Nosotros</a></li>
+                        <li><a href="#servicios">Servicios</a></li>
+                        <li><a href="#contacto">Contacto</a></li>
+                    </ul>
+                </nav>
+                <div class="social-icons">
+                    <a href="TU_LINK_DE_FACEBOOK" target="_blank" title="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="TU_LINK_DE_INSTAGRAM" target="_blank" title="Instagram"><i
+                            class="fab fa-instagram"></i></a>
+                    <a href="TU_LINK_DE_WHATSAPP" target="_blank" title="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
         </div>
     </header>
 
@@ -38,7 +55,7 @@
 
         <div class="hero-content">
             <h1>PROFESIONALES EN GENERADORES DE VAPOR Y AGUA CALIENTE</h1>
-            <p>CONTACTANOS HOY MISMO PARA TU SOLUCIÓN!</p>
+            <p>¡CONTÁCTANOS HOY MISMO PARA TU SOLUCIÓN!</p>
             <a href="#contacto" class="btn">Cotizar un Servicio</a>
         </div>
     </section>
@@ -62,8 +79,6 @@
             <h1 class="text-center text-white">NUESTROS SERVICIOS</h1>
             <div class="services-carousel">
 
-                <!-- Caja 1: VENTA -->
-
                 <div class="service-box" style="--bg-image: url('assets/Venta.jpg');">
                     <div class="service-content">
                         <h3>VENTA</h3>
@@ -74,8 +89,6 @@
                     </div>
                 </div>
 
-                <!-- Caja 2: MANTENIMIENTO -->
-
                 <div class="service-box" style="--bg-image: url('assets/Mantenimiento.jpg');">
                     <div class="service-content">
                         <h3>MANTENIMIENTO</h3>
@@ -85,8 +98,6 @@
                         </div>
                     </div>
                 </div>
-
-                <!-- Caja 3: REPARACIÓN -->
 
                 <div class="service-box" style="--bg-image: url('assets/Reparación.jpg');">
                     <div class="service-content">
@@ -102,24 +113,33 @@
         </div>
     </section>
 
-    <section id="contacto" class="container section">
-        <div class="contact-grid">
-            <div>
+    <section id="contacto" class="contact-section section">
+        <div class="container contact-grid">
+            <div class="contact-details">
                 <h2>Contáctanos</h2>
                 <p>Estamos listos para brindarte la mejor solución térmica. Siempre abiertos para atenderte.</p>
                 <ul class="contact-info">
-                    <li><strong>📞 Teléfono:</strong> 55 1503 7612</li>
-                    <li><strong>✉️ Correo:</strong> scalderas@yahoo.com.mx</li>
-                    <li><strong>📍 Ubicación:</strong> Av. Vallejo 1307, Col. SCT Vallejo, GAM, 07700, CDMX</li>
+                    <li>
+                        <i class="fa-solid fa-phone"></i>
+                        <span><strong>Teléfono:</strong> 55 1503 7612</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-envelope"></i>
+                        <span><strong>Correo:</strong> scalderas@yahoo.com.mx</span>
+                    </li>
+                    <li>
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span><strong>Ubicación:</strong> Av. Vallejo 1307, Col. SCT Vallejo, GAM, 07700, CDMX</span>
+                    </li>
                 </ul>
             </div>
-            <div class="contact-form">
-                <form action="#">
-                    <input type="text" placeholder="Tu Nombre" required>
-                    <input type="email" placeholder="Tu Correo" required>
-                    <textarea rows="4" placeholder="¿En qué podemos ayudarte?" required></textarea>
-                    <button type="submit" class="btn btn-block">Enviar Mensaje</button>
-                </form>
+
+            <div class="contact-map">
+                <iframe
+                    src="https://maps.google.com/maps?q=Av.%20Vallejo%201307,%20Col.%20SCT%20Vallejo,%20GAM,%2007700,%20CDMX&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
             </div>
         </div>
     </section>
