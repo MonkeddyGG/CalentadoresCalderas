@@ -1,18 +1,38 @@
-// SCRIPT DEL CARRUSEL DE IMÁGENES (HERO)
+// HERO: TEXTO DINÁMICO
 const slides = document.querySelectorAll('.slide');
-let currentSlide = 0;
+const dynamicServiceText = document.getElementById('dynamic-service');
 
-function nextSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide + 1) % slides.length;
-    slides[currentSlide].classList.add('active');
+const servicesData = [
+    { text: "REPARACIÓN", color: "#e63946" },
+    { text: "INSTALACIÓN", color: "#4cc9f0" },
+    { text: "MANTENIMIENTO", color: "#06d6a0" },
+    { text: "DISTRIBUCIÓN", color: "#ffd166" }
+];
+
+let currentIndex = 0;
+
+function nextSlideAndText() {
+    dynamicServiceText.classList.add('fade-out');
+    setTimeout(() => {
+        slides[currentIndex].classList.remove('active');
+        currentIndex = (currentIndex + 1) % slides.length;
+        slides[currentIndex].classList.add('active');
+
+        dynamicServiceText.textContent = servicesData[currentIndex].text;
+        dynamicServiceText.style.color = servicesData[currentIndex].color;
+
+        dynamicServiceText.classList.remove('fade-out');
+        dynamicServiceText.classList.add('fade-in');
+
+        setTimeout(() => {
+            dynamicServiceText.classList.remove('fade-in');
+        }, 500);
+    }, 500);
 }
-
-// Cambia de imagen cada 5 segundos
-setInterval(nextSlide, 5000);
+setInterval(nextSlideAndText, 4000);
 
 
-// SCRIPT PARA EL MENÚ PEGAJOSO Y REDUCCIÓN DE TAMAÑO
+// NAVEGACIÓN STICKY
 window.addEventListener('scroll', function () {
     const header = document.querySelector('header');
     if (window.scrollY > 50) {
@@ -23,16 +43,13 @@ window.addEventListener('scroll', function () {
 });
 
 
-// SCRIPT PARA EL MENÚ HAMBURGUESA EN MÓVILES
+// MENÚ HAMBURGUESA
 const mobileMenuBtn = document.getElementById('mobile-menu');
 const navMenu = document.getElementById('nav-menu');
 const navLinks = document.querySelectorAll('.nav-right nav ul li a');
 
-// Abrir/Cerrar menú al tocar el icono
 mobileMenuBtn.addEventListener('click', () => {
     navMenu.classList.toggle('active');
-
-    // Cambiar el icono de barras a "X"
     const icon = mobileMenuBtn.querySelector('i');
     if (navMenu.classList.contains('active')) {
         icon.classList.remove('fa-bars');
@@ -43,7 +60,6 @@ mobileMenuBtn.addEventListener('click', () => {
     }
 });
 
-// Cerrar el menú automáticamente cuando se hace clic en un enlace (útil en móviles)
 navLinks.forEach(link => {
     link.addEventListener('click', () => {
         navMenu.classList.remove('active');
@@ -52,3 +68,94 @@ navLinks.forEach(link => {
         icon.classList.add('fa-bars');
     });
 });
+
+
+/* CARRUSEL AUTOMÁTICO (Izquierda a Derecha) */
+const tTrack = document.getElementById('t-track');
+const tPrev = document.getElementById('t-prev');
+const tNext = document.getElementById('t-next');
+const tItems = document.querySelectorAll('.t-slide-item');
+
+if (tTrack && tItems.length > 0) {
+    let tIndex = 0;
+    let itemsPerView = window.innerWidth >= 768 ? 3 : 1;
+
+    function updateCarousel() {
+        const itemWidth = tItems[0].clientWidth;
+        tTrack.style.transform = `translateX(-${tIndex * itemWidth}px)`;
+    }
+
+    // Mueve el carrusel para que las imágenes fluyan hacia la derecha (avanzar)
+    function autoScrollRight() {
+        if (tIndex < tItems.length - itemsPerView) {
+            tIndex++;
+        } else {
+            // Regresa al inicio
+            tIndex = 0;
+        }
+        updateCarousel();
+    }
+
+    function moveToPrev() {
+        if (tIndex > 0) {
+            tIndex--;
+        } else {
+            tIndex = tItems.length - itemsPerView;
+        }
+        updateCarousel();
+    }
+
+    // Intervalo Automático cada 3 Segundos
+    let autoPlayInterval = setInterval(autoScrollRight, 3000);
+
+    // Reinicia el contador si el usuario interactúa manualmente
+    function resetAutoPlay() {
+        clearInterval(autoPlayInterval);
+        autoPlayInterval = setInterval(autoScrollRight, 3000);
+    }
+
+    tNext.addEventListener('click', () => {
+        autoScrollRight();
+        resetAutoPlay();
+    });
+
+    tPrev.addEventListener('click', () => {
+        moveToPrev();
+        resetAutoPlay();
+    });
+
+    window.addEventListener('resize', () => {
+        itemsPerView = window.innerWidth >= 768 ? 3 : 1;
+        if (tIndex > tItems.length - itemsPerView) {
+            tIndex = Math.max(0, tItems.length - itemsPerView);
+        }
+        updateCarousel();
+    });
+}
+
+// MANEJO DE FORMULARIO DE CONTACTO - ENVIAR A WHATSAPP
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', function (e) {
+        e.preventDefault(); // Evita recargar la página
+
+        // Obtener los datos de los inputs
+        const nombre = document.getElementById('nombre').value;
+        const correo = document.getElementById('correo').value;
+        const telefono = document.getElementById('telefono').value;
+        const mensaje = document.getElementById('mensaje').value;
+
+        // Número de WhatsApp al que llegará (con código de México 52)
+        const numeroWhatsApp = "525515037612";
+
+        // Crear el texto del mensaje con saltos de línea (%0A)
+        const texto = `Hola, vengo de la página web.%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Teléfono:* ${telefono}%0A*Mensaje:* ${mensaje}`;
+
+        // Crear el link de WhatsApp y abrirlo en una nueva pestaña
+        const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
+        window.open(urlWhatsApp, '_blank');
+
+        // Limpiar el formulario después de enviarlo
+        this.reset();
+    });
+}
