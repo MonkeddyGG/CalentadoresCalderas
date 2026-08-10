@@ -70,92 +70,55 @@ navLinks.forEach(link => {
 });
 
 
-/* CARRUSEL AUTOMÁTICO (Izquierda a Derecha) */
-const tTrack = document.getElementById('t-track');
-const tPrev = document.getElementById('t-prev');
-const tNext = document.getElementById('t-next');
-const tItems = document.querySelectorAll('.t-slide-item');
-
-if (tTrack && tItems.length > 0) {
-    let tIndex = 0;
-    let itemsPerView = window.innerWidth >= 768 ? 3 : 1;
-
-    function updateCarousel() {
-        const itemWidth = tItems[0].clientWidth;
-        tTrack.style.transform = `translateX(-${tIndex * itemWidth}px)`;
+/* ----------------------------------------------------
+   CARRUSEL AUTOMÁTICO PROFESIONAL (SWIPER)
+   Resuelve el efecto visual de rebote y es 100% responsivo
+------------------------------------------------------- */
+document.addEventListener('DOMContentLoaded', () => {
+    if (typeof Swiper !== 'undefined') {
+        const swiper = new Swiper('.trayectoria-swiper', {
+            loop: true,                 // Bucle verdaderamente infinito (sin regreso de golpe)
+            centeredSlides: true,       // La imagen central siempre activa
+            slidesPerView: 1,           // Mostrar 1 a la vez en celulares
+            spaceBetween: 20,           // Espacio entre imágenes
+            speed: 800,                 // Velocidad de transición suave y elegante
+            autoplay: {
+                delay: 3500,            // Cambia cada 3.5 segundos
+                disableOnInteraction: false, // No detener el autoplay si el usuario da clic
+            },
+            navigation: {
+                nextEl: '.t-next',
+                prevEl: '.t-prev',
+            },
+            breakpoints: {
+                768: {                  // Tabletas y computadoras
+                    slidesPerView: 3,   // Mostrar 3 imágenes a la vez
+                    spaceBetween: 40,
+                }
+            }
+        });
     }
+});
 
-    // Mueve el carrusel para que las imágenes fluyan hacia la derecha (avanzar)
-    function autoScrollRight() {
-        if (tIndex < tItems.length - itemsPerView) {
-            tIndex++;
-        } else {
-            // Regresa al inicio
-            tIndex = 0;
-        }
-        updateCarousel();
-    }
-
-    function moveToPrev() {
-        if (tIndex > 0) {
-            tIndex--;
-        } else {
-            tIndex = tItems.length - itemsPerView;
-        }
-        updateCarousel();
-    }
-
-    // Intervalo Automático cada 3 Segundos
-    let autoPlayInterval = setInterval(autoScrollRight, 3000);
-
-    // Reinicia el contador si el usuario interactúa manualmente
-    function resetAutoPlay() {
-        clearInterval(autoPlayInterval);
-        autoPlayInterval = setInterval(autoScrollRight, 3000);
-    }
-
-    tNext.addEventListener('click', () => {
-        autoScrollRight();
-        resetAutoPlay();
-    });
-
-    tPrev.addEventListener('click', () => {
-        moveToPrev();
-        resetAutoPlay();
-    });
-
-    window.addEventListener('resize', () => {
-        itemsPerView = window.innerWidth >= 768 ? 3 : 1;
-        if (tIndex > tItems.length - itemsPerView) {
-            tIndex = Math.max(0, tItems.length - itemsPerView);
-        }
-        updateCarousel();
-    });
-}
 
 // MANEJO DE FORMULARIO DE CONTACTO - ENVIAR A WHATSAPP
 const contactForm = document.getElementById('contactForm');
 if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
-        e.preventDefault(); // Evita recargar la página
+        e.preventDefault();
 
-        // Obtener los datos de los inputs
         const nombre = document.getElementById('nombre').value;
         const correo = document.getElementById('correo').value;
         const telefono = document.getElementById('telefono').value;
         const mensaje = document.getElementById('mensaje').value;
 
-        // Número de WhatsApp al que llegará (con código de México 52)
         const numeroWhatsApp = "525515037612";
 
-        // Crear el texto del mensaje con saltos de línea (%0A)
         const texto = `Hola, vengo de la página web.%0A%0A*Nombre:* ${nombre}%0A*Correo:* ${correo}%0A*Teléfono:* ${telefono}%0A*Mensaje:* ${mensaje}`;
 
-        // Crear el link de WhatsApp y abrirlo en una nueva pestaña
         const urlWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${texto}`;
         window.open(urlWhatsApp, '_blank');
 
-        // Limpiar el formulario después de enviarlo
         this.reset();
     });
 }
