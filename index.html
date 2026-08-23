@@ -11,6 +11,14 @@
         gtag('js', new Date());
         gtag('config', 'G-LHD14NDGLD');
     </script>
+
+    <!-- Metaetiquetas SEO -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calentadores Calderas | Reparación, Mantenimiento y Venta de Calderas</title>
+    <meta name="description"
+        content="Servicios especializados en venta, reparación y mantenimiento preventivo de calderas y maquinaria industrial.">
+
     <!-- Open Graph para Redes Sociales y WhatsApp -->
     <meta property="og:title" content="Calentadores Calderas | Venta, Mantenimiento y Reparación.">
     <meta property="og:description"
@@ -20,15 +28,19 @@
     <meta property="og:image" content="https://calentadorescalderas.com.mx/assets/ServiciosCalderas.jpeg">
     <meta property="og:image:width" content="1200">
     <meta property="og:image:height" content="630">
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Calentadores Calderas | Reparación, Mantenimiento y Venta de Calderas</title>
 
-    <!-- CSS de Swiper para el Carrusel -->
+    <link rel="preload" as="image" href="assets/Reparacion-Calderas.png">
+
+    <!-- CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Carga de íconos asíncrona -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
 </head>
 
 <body>
@@ -36,12 +48,15 @@
     <header>
         <div class="container nav-container">
             <div class="logo">
-                <img src="assets/logo-calentadores-calderas.png" alt="Logo Calentadores Calderas" class="logo-img">
-                <h2>Calentadores <span>Calderas</span></h2>
+                <img src="assets/logo-calentadores-calderas.png" alt="Logo Calentadores Calderas" width="220"
+                    height="60" class="logo-img">
+                <div class="logo-title">Calentadores <span>Calderas</span></div>
             </div>
-            <div class="menu-toggle" id="mobile-menu">
-                <i class="fa-solid fa-bars"></i>
+
+            <div class="menu-toggle" id="mobile-menu" aria-label="Abrir menú de navegación" role="button" tabindex="0">
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
             </div>
+
             <div class="nav-right" id="nav-menu">
                 <nav>
                     <ul>
@@ -52,10 +67,13 @@
                     </ul>
                 </nav>
                 <div class="social-icons">
-                    <a href="https://www.facebook.com/calentadorescalderas1/" target="_blank"><i
-                            class="fab fa-facebook-f"></i></a>
-                    <a href="TU_LINK_DE_INSTAGRAM" target="_blank"><i class="fab fa-instagram"></i></a>
-                    <a href="https://wa.me/5515037612" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                    <a href="https://www.facebook.com/calentadorescalderas1/" target="_blank"
+                        aria-label="Visitar nuestra página de Facebook"><i class="fab fa-facebook-f"
+                            aria-hidden="true"></i></a>
+                    <a href="TU_LINK_DE_INSTAGRAM" target="_blank" aria-label="Visitar nuestro perfil de Instagram"><i
+                            class="fab fa-instagram" aria-hidden="true"></i></a>
+                    <a href="https://wa.me/5515037612" target="_blank" aria-label="Enviar mensaje por WhatsApp"><i
+                            class="fab fa-whatsapp" aria-hidden="true"></i></a>
                 </div>
             </div>
         </div>
@@ -64,11 +82,9 @@
     <section id="inicio" class="hero">
         <div class="carousel">
             <div class="slide active" style="background-image: url('assets/Reparacion-Calderas.png');"></div>
-            <div class="slide" style="background-image: url('assets/Instalacion-Calderas.png');">
-            </div>
+            <div class="slide" style="background-image: url('assets/Instalacion-Calderas.png');"></div>
             <div class="slide" style="background-image: url('assets/Mantenimiento-Calderas.png');"></div>
-            <div class="slide" style="background-image: url('assets/Distribucion-Calderas.png');">
-            </div>
+            <div class="slide" style="background-image: url('assets/Distribucion-Calderas.png');"></div>
         </div>
         <div class="hero-overlay"></div>
         <div class="hero-content">
@@ -78,7 +94,8 @@
                     CALIENTE</span>
             </h1>
             <p>¡CONTÁCTANOS HOY MISMO PARA TU SOLUCIÓN!</p>
-            <a href="https://wa.me/5515037612" class="btn"><i class="fab fa-whatsapp"></i> Cotizar un Servicio</a>
+            <a href="https://wa.me/5515037612" class="btn"><i class="fab fa-whatsapp" aria-hidden="true"></i> Cotizar un
+                Servicio</a>
         </div>
     </section>
 
@@ -89,7 +106,6 @@
 
         <div class="container nosotros-content">
             <h2 class="text-center text-white">Nuestra Trayectoria</h2>
-
             <div class="nosotros-text">
                 <p>Somos una empresa 100% mexicana y líder en nuestro sector dedicada a brindar soluciones a las
                     necesidades de Calderas, Calentadores, Boilers y Maquinaria de agua caliente y generación de vapor.
@@ -99,72 +115,97 @@
                     instalación y mantenimiento de equipos térmicos en toda la República.</p>
             </div>
 
-            <!-- Carrusel de Trayectoria Automático Profesional -->
+            <!-- Carrusel Modernizado -->
             <div class="trayectoria-carousel-wrapper">
-                <h3 class="text-center text-white" style="margin-bottom: 30px; font-size: 2rem;">Ejemplos de nuestro
+                <h3 class="text-center text-white" style="margin-bottom: 40px; font-size: 2.2rem;">Ejemplos de nuestro
                     trabajo</h3>
 
                 <div class="carousel-container" style="position: relative;">
-                    <!-- Swiper Main Container -->
                     <div class="swiper trayectoria-swiper">
                         <div class="swiper-wrapper">
-                            <!-- Slides -->
-                            <div class="swiper-slide"><img src="assets/proyectocalderas1.png" alt="Proyecto 1"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas2.png" alt="Proyecto 2"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas3.png" alt="Proyecto 3"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas4.png" alt="Proyecto 4"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas5.png" alt="Proyecto 5"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas6.png" alt="Proyecto 6"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas7.png" alt="Proyecto 7"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas8.png" alt="Proyecto 8"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas1.png"
+                                    alt="Proyecto de caldera 1" width="600" height="450" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas2.png"
+                                    alt="Proyecto de caldera 2" width="600" height="450" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas3.png"
+                                    alt="Proyecto de caldera 3" width="600" height="450" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas4.png"
+                                    alt="Proyecto de caldera 4" width="600" height="450" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas5.png"
+                                    alt="Proyecto de caldera 5" width="600" height="450" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas6.png"
+                                    alt="Proyecto de caldera 6" width="600" height="450" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas7.png"
+                                    alt="Proyecto de caldera 7" width="600" height="450" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas8.png"
+                                    alt="Proyecto de caldera 8" width="600" height="450" loading="lazy"></div>
                         </div>
                     </div>
-
                     <!-- Botones de Navegación -->
-                    <button class="t-btn t-prev"><i class="fa-solid fa-chevron-left"></i></button>
-                    <button class="t-btn t-next"><i class="fa-solid fa-chevron-right"></i></button>
+                    <button class="t-btn t-prev" aria-label="Ver imagen anterior"><i class="fa-solid fa-chevron-left"
+                            aria-hidden="true"></i></button>
+                    <button class="t-btn t-next" aria-label="Ver imagen siguiente"><i class="fa-solid fa-chevron-right"
+                            aria-hidden="true"></i></button>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN SERVICIOS -->
-    <section id="servicios" class="services-dark section">
+    <!-- SECCIÓN SERVICIOS (ZIG-ZAG) -->
+    <section id="servicios" class="services-list-section section">
         <div class="container">
-            <h1 class="text-center text-white">NUESTROS SERVICIOS</h1>
-            <div class="services-carousel">
-                <div class="service-box" style="--bg-image: url('assets/Venta-Calderas.png');">
-                    <div class="service-content">
-                        <h3>VENTA</h3>
-                        <div class="service-extra">
-                            <p>Contamos con los mejores equipos de generación de vapor y agua caliente adaptados a las
-                                necesidades de tu industria o residencia.</p>
-                        </div>
-                    </div>
+            <h2 class="text-center section-title">NUESTROS SERVICIOS</h2>
+            <p class="section-subtitle text-center" style="margin-bottom: 60px;">Soluciones integrales para la industria
+                y el hogar</p>
+
+            <!-- Venta (Imagen Izquierda, Texto Derecha) -->
+            <div class="service-row">
+                <div class="service-img-col">
+                    <img src="assets/Venta-Calderas.png" alt="Venta de equipos de calderas" width="600" height="400"
+                        loading="lazy">
                 </div>
-                <div class="service-box" style="--bg-image: url('assets/Caldera-Calderas.png');">
-                    <div class="service-content">
-                        <h3>MANTENIMIENTO</h3>
-                        <div class="service-extra">
-                            <p>Planes de mantenimiento preventivo para asegurar el máximo rendimiento, eficiencia y
-                                prolongar la vida útil de tus equipos.</p>
-                        </div>
-                    </div>
+                <div class="service-text-col">
+                    <h3>VENTA</h3>
+                    <p>Contamos con los mejores equipos de generación de vapor y agua caliente adaptados a las
+                        necesidades de tu industria o residencia. Te asesoramos para que adquieras la tecnología más
+                        eficiente y segura del mercado.</p>
+                    <a href="https://wa.me/5515037612" class="btn btn-outline" target="_blank">Consultar Catálogo</a>
                 </div>
-                <div class="service-box" style="--bg-image: url('assets/Caldera-Reparada.png');">
-                    <div class="service-content">
-                        <h3>REPARACIÓN</h3>
-                        <div class="service-extra">
-                            <p>Servicio correctivo especializado con refacciones originales para resolver cualquier
-                                falla operativa de forma rápida y segura.</p>
-                        </div>
-                    </div>
+            </div>
+
+            <!-- Mantenimiento (Texto Izquierda, Imagen Derecha) -->
+            <div class="service-row reverse">
+                <div class="service-img-col">
+                    <img src="assets/Caldera-Calderas.png" alt="Mantenimiento de calderas" width="600" height="400"
+                        loading="lazy">
+                </div>
+                <div class="service-text-col">
+                    <h3>MANTENIMIENTO</h3>
+                    <p>Planes de mantenimiento preventivo para asegurar el máximo rendimiento, eficiencia y prolongar la
+                        vida útil de tus equipos. Evita paros operativos inesperados con nuestras pólizas
+                        especializadas.</p>
+                    <a href="https://wa.me/5515037612" class="btn btn-outline" target="_blank">Agendar Revisión</a>
+                </div>
+            </div>
+
+            <!-- Reparación (Imagen Izquierda, Texto Derecha) -->
+            <div class="service-row">
+                <div class="service-img-col">
+                    <img src="assets/Caldera-Reparada.png" alt="Reparación de calderas" width="600" height="400"
+                        loading="lazy">
+                </div>
+                <div class="service-text-col">
+                    <h3>REPARACIÓN</h3>
+                    <p>Servicio correctivo especializado con refacciones originales para resolver cualquier falla
+                        operativa de forma rápida y segura. Respuesta inmediata a urgencias para que tu operación no se
+                        detenga.</p>
+                    <a href="https://wa.me/5515037612" class="btn btn-outline" target="_blank">Solicitar Asistencia</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN CONTACTO MEJORADA -->
+    <!-- SECCIÓN CONTACTO PROFESIONAL (SIN FORMULARIO) -->
     <section id="contacto" class="contact-section section">
         <div class="container">
             <div class="text-center">
@@ -173,27 +214,32 @@
                     para atenderte.</p>
             </div>
 
-            <div class="contact-wrapper">
-                <!-- Información y Redes Sociales -->
+            <div class="contact-modern-grid">
+                <!-- Información de Contacto -->
                 <div class="contact-info-card">
-                    <h3>Información de Contacto</h3>
+                    <h3>Información Directa</h3>
+                    <p style="margin-bottom: 30px; color: #555;">No dudes en comunicarte con nosotros por cualquiera de
+                        nuestros canales oficiales. Te atenderemos a la brevedad.</p>
+
                     <ul class="contact-list">
                         <li>
-                            <div class="icon-box"><i class="fa-solid fa-headset"></i></div>
+                            <div class="icon-box"><i class="fa-solid fa-headset" aria-hidden="true"></i></div>
                             <div class="info-text">
-                                <strong>Teléfono</strong>
-                                <span>55 1503 7612</span>
+                                <strong>Teléfono y WhatsApp</strong>
+                                <span><a href="https://wa.me/5515037612" target="_blank" style="color: inherit;">55 1503
+                                        7612</a></span>
                             </div>
                         </li>
                         <li>
-                            <div class="icon-box"><i class="fa-regular fa-envelope"></i></div>
+                            <div class="icon-box"><i class="fa-regular fa-envelope" aria-hidden="true"></i></div>
                             <div class="info-text">
                                 <strong>Correo Electrónico</strong>
-                                <span>scalderas@yahoo.com.mx</span>
+                                <span><a href="mailto:scalderas@yahoo.com.mx"
+                                        style="color: inherit;">scalderas@yahoo.com.mx</a></span>
                             </div>
                         </li>
                         <li>
-                            <div class="icon-box"><i class="fa-solid fa-map-location-dot"></i></div>
+                            <div class="icon-box"><i class="fa-solid fa-map-location-dot" aria-hidden="true"></i></div>
                             <div class="info-text">
                                 <strong>Ubicación</strong>
                                 <span>Av. Vallejo 1307, Col. SCT Vallejo, GAM, 07700, CDMX</span>
@@ -205,55 +251,63 @@
                         <h4>Síguenos en nuestras redes</h4>
                         <div class="social-icons-contact">
                             <a href="https://www.facebook.com/calentadorescalderas1/" target="_blank"
-                                title="Facebook"><i class="fab fa-facebook-f"></i></a>
-                            <a href="TU_LINK_DE_INSTAGRAM" target="_blank" title="Instagram"><i
-                                    class="fab fa-instagram"></i></a>
-                            <a href="https://wa.me/5515037612" target="_blank" title="WhatsApp"><i
-                                    class="fab fa-whatsapp"></i></a>
+                                aria-label="Visitar Facebook" title="Facebook"><i class="fab fa-facebook-f"
+                                    aria-hidden="true"></i></a>
+                            <a href="TU_LINK_DE_INSTAGRAM" target="_blank" aria-label="Visitar Instagram"
+                                title="Instagram"><i class="fab fa-instagram" aria-hidden="true"></i></a>
                         </div>
                     </div>
                 </div>
 
-                <!-- Formulario de Contacto -->
-                <div class="contact-form-card">
-                    <h3>Envíanos un Mensaje</h3>
-                    <form action="#" method="POST" id="contactForm">
-                        <div class="input-group">
-                            <input type="text" id="nombre" name="nombre" required placeholder="Tu Nombre o Empresa">
-                        </div>
-                        <div class="input-group">
-                            <input type="email" id="correo" name="correo" required placeholder="Tu Correo Electrónico">
-                        </div>
-                        <div class="input-group">
-                            <input type="tel" id="telefono" name="telefono" placeholder="Tu Teléfono (Opcional)">
-                        </div>
-                        <div class="input-group">
-                            <textarea id="mensaje" name="mensaje" rows="4" required
-                                placeholder="¿Cómo podemos ayudarte?"></textarea>
-                        </div>
-                        <button type="submit" class="btn btn-submit"><i class="fa-solid fa-paper-plane"></i> Enviar
-                            Mensaje</button>
-                    </form>
+                <!-- Mapa Ocupando Todo el Lado Derecho -->
+                <div class="contact-map-container">
+                    <iframe
+                        src="https://maps.google.com/maps?q=Av.%20Vallejo%201307,%20Col.%20SCT%20Vallejo,%20GAM,%2007700,%20CDMX&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                        width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"
+                        title="Mapa interactivo de ubicación de la empresa en Google Maps"></iframe>
                 </div>
-            </div>
-
-            <!-- Mapa -->
-            <div class="contact-map-container">
-                <iframe
-                    src="https://maps.google.com/maps?q=Av.%20Vallejo%201307,%20Col.%20SCT%20Vallejo,%20GAM,%2007700,%20CDMX&t=&z=15&ie=UTF8&iwloc=&output=embed"
-                    width="100%" height="100%" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
             </div>
         </div>
     </section>
 
-    <footer>
-        <p>&copy; 2026 Calentadores Calderas.</p>
+    <!-- FOOTER EXPANDIDO Y OPTIMIZADO -->
+    <footer class="site-footer">
+        <div class="container footer-grid">
+            <div class="footer-about">
+                <img src="assets/logo-calentadores-calderas.png" alt="Logo Footer" width="200" height="54"
+                    loading="lazy" class="footer-logo">
+                <p>Empresa 100% mexicana con más de 57 años de experiencia. Líderes en soluciones térmicas,
+                    mantenimiento y reparación de calderas en toda la República.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Enlaces Rápidos</h4>
+                <ul>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#nosotros">Nuestra Trayectoria</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-contact-info">
+                <h4>Atención al Cliente</h4>
+                <p><i class="fa-solid fa-location-dot"></i> Av. Vallejo 1307, GAM, CDMX</p>
+                <p><i class="fa-solid fa-phone"></i> 55 1503 7612</p>
+                <p><i class="fa-solid fa-envelope"></i> scalderas@yahoo.com.mx</p>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            <p>&copy; 2026 Calentadores Calderas. Todos los derechos reservados.</p>
+            <!-- FIRMA DE DETECH CON EFECTO GLOW -->
+            <p class="credit">Diseño y desarrollo web por <a href="TU_ENLACE_A_DETECH" class="glow-link" target="_blank"
+                    rel="noopener noreferrer">DETECH</a></p>
+        </div>
     </footer>
 
-    <!-- JS de Swiper para el Carrusel -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
-    <!-- Script personalizado -->
-    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+    <script src="script.js" defer></script>
 </body>
 
 </html>
