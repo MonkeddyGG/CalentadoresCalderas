@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+    // ==========================================
     // 1. ANIMACIÓN REVEAL AL HACER SCROLL
+    // ==========================================
     const revealElements = document.querySelectorAll('.reveal');
     const revealOptions = {
         threshold: 0.1,
@@ -17,10 +19,11 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealOnScroll.observe(el));
 
-    // 2. TEXTO DINÁMICO HERO (NUEVO)
+    // ==========================================
+    // 2. TEXTO DINÁMICO HERO (Palabras cambiantes)
+    // ==========================================
     const dynamicText = document.getElementById('dynamic-text');
     if (dynamicText) {
-        // Palabras y colores corporativos (Rojo, Azul, Verde, Naranja)
         const words = [
             { text: "REPARACIÓN", color: "#D32F2F" },
             { text: "INSTALACIÓN", color: "#1565C0" },
@@ -30,28 +33,26 @@ document.addEventListener('DOMContentLoaded', () => {
         let wordIndex = 0;
 
         setInterval(() => {
-            // Empieza el desvanecimiento (Fade Out)
             dynamicText.classList.add('fade-out');
 
             setTimeout(() => {
-                // Cambia el contenido y color estando oculto
                 wordIndex = (wordIndex + 1) % words.length;
                 dynamicText.textContent = words[wordIndex].text;
                 dynamicText.style.color = words[wordIndex].color;
 
-                // Lo hace reaparecer (Fade In)
                 dynamicText.classList.remove('fade-out');
                 dynamicText.classList.add('fade-in');
 
-                // Limpia la clase in para el siguiente ciclo
                 setTimeout(() => {
                     dynamicText.classList.remove('fade-in');
-                }, 400); // 400ms dura la animación CSS
-            }, 400); // Espera a que termine el fade-out
-        }, 3000); // Cambia cada 3 segundos
+                }, 400);
+            }, 400);
+        }, 3000);
     }
 
+    // ==========================================
     // 3. SLIDESHOW DEL HERO (Fondo)
+    // ==========================================
     const slides = document.querySelectorAll('.slide');
     if (slides.length > 0) {
         let currentIndex = 0;
@@ -62,7 +63,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 6000);
     }
 
+    // ==========================================
     // 4. HEADER STICKY 
+    // ==========================================
     const header = document.getElementById('main-header');
     window.addEventListener('scroll', () => {
         if (window.scrollY > 50) {
@@ -72,7 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
+    // ==========================================
     // 5. MENÚ HAMBURGUESA PARA CELULARES
+    // ==========================================
     const mobileMenuBtn = document.getElementById('mobile-menu');
     const navMenu = document.getElementById('nav-menu');
     const navLinks = document.querySelectorAll('.nav-right nav ul li a');
@@ -102,7 +107,9 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // ==========================================
     // 6. CARROUSEL DE NOSOTROS (SWIPER JS)
+    // ==========================================
     if (typeof Swiper !== 'undefined') {
         new Swiper('.trayectoria-swiper', {
             effect: 'fade',
@@ -118,40 +125,60 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }
-});
 
-// ==========================================
-// 7. WIDGET DE WHATSAPP REALISTA
-// ==========================================
+    // ==========================================
+    // 7. WIDGET DE WHATSAPP REALISTA
+    // ==========================================
+    const waTimeElement = document.getElementById('wa-time');
+    if (waTimeElement) {
+        const now = new Date();
+        let hours = now.getHours();
+        let minutes = now.getMinutes();
+        const ampm = hours >= 12 ? 'p.m.' : 'a.m.';
+        hours = hours % 12;
+        hours = hours ? hours : 12;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        waTimeElement.textContent = hours + ':' + minutes + ' ' + ampm;
+    }
 
-// Generar la hora actual para hacer el mensaje realista
-const waTimeElement = document.getElementById('wa-time');
-if (waTimeElement) {
-    const now = new Date();
-    let hours = now.getHours();
-    let minutes = now.getMinutes();
-    const ampm = hours >= 12 ? 'p.m.' : 'a.m.';
+    const closeWaBtn = document.getElementById('close-wa');
+    const waTooltip = document.getElementById('wa-tooltip');
 
-    hours = hours % 12;
-    hours = hours ? hours : 12; // la hora '0' debe ser '12'
-    minutes = minutes < 10 ? '0' + minutes : minutes;
+    if (closeWaBtn && waTooltip) {
+        closeWaBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+            waTooltip.style.transform = 'scale(0)';
+            waTooltip.style.opacity = '0';
+            setTimeout(() => {
+                waTooltip.style.display = 'none';
+            }, 400);
+        });
+    }
 
-    waTimeElement.textContent = hours + ':' + minutes + ' ' + ampm;
-}
+    // ==========================================
+    // 8. LÓGICA DEL BANNER DE COOKIES
+    // ==========================================
+    const cookieBanner = document.getElementById('cookie-banner');
+    const acceptCookiesBtn = document.getElementById('accept-cookies');
+    const rejectCookiesBtn = document.getElementById('reject-cookies');
 
-// Funcionalidad de cerrar la burbuja
-const closeWaBtn = document.getElementById('close-wa');
-const waTooltip = document.getElementById('wa-tooltip');
-
-if (closeWaBtn && waTooltip) {
-    closeWaBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Animación de escala para desaparecer (como WhatsApp)
-        waTooltip.style.transform = 'scale(0)';
-        waTooltip.style.opacity = '0';
-
+    if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
         setTimeout(() => {
-            waTooltip.style.display = 'none';
-        }, 400); // Espera a que termine la animación
-    });
-}
+            cookieBanner.classList.add('show');
+        }, 2000); // 2 segundos de retraso para no ser invasivo
+    }
+
+    if (acceptCookiesBtn) {
+        acceptCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'true');
+            cookieBanner.classList.remove('show');
+        });
+    }
+
+    if (rejectCookiesBtn) {
+        rejectCookiesBtn.addEventListener('click', () => {
+            localStorage.setItem('cookiesAccepted', 'false');
+            cookieBanner.classList.remove('show');
+        });
+    }
+});

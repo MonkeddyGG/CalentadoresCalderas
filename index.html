@@ -29,11 +29,13 @@
     <!-- Swiper CSS & Font Awesome -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <!-- HEADER -->
+    <!-- HEADER STICKY -->
     <header id="main-header">
         <div class="container nav-container">
             <div class="logo">
@@ -65,7 +67,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION -->
+    <!-- HERO SECTION (Con texto dinámico y control de zoom) -->
     <section id="inicio" class="hero">
         <div class="carousel">
             <div class="slide active" style="background-image: url('assets/Reparacion-Calderas.png');"></div>
@@ -89,39 +91,33 @@
         </div>
     </section>
 
-    <!-- TRUST BAR (CARRUSEL CORPORATIVO INFINITO) -->
+    <!-- BANDA INFINITA (MARQUEE CORPORATIVO) -->
     <div class="trust-marquee-section">
         <div class="marquee-wrapper">
             <div class="marquee-track">
-                <div class="marquee-item">
-                    <i class="fa-solid fa-shield-halved"></i> <span>MÁS DE 57 AÑOS DE TRAYECTORIA</span>
+                <!-- Set 1 -->
+                <div class="marquee-item"><i class="fa-solid fa-shield-halved"></i> <span>MÁS DE 57 AÑOS DE
+                        TRAYECTORIA</span></div>
+                <div class="marquee-item"><i class="fa-solid fa-gears"></i> <span>+1,500 PROYECTOS INDUSTRIALES</span>
                 </div>
-                <div class="marquee-item">
-                    <i class="fa-solid fa-gears"></i> <span>+1,500 PROYECTOS INDUSTRIALES</span>
+                <div class="marquee-item"><i class="fa-solid fa-building-circle-check"></i> <span>+3,000 INSTALACIONES
+                        SEGURAS</span></div>
+                <div class="marquee-item"><i class="fa-solid fa-certificate"></i> <span>100% GARANTÍA DE
+                        SATISFACCIÓN</span></div>
+                <!-- Set 2 (Duplicado para efecto infinito) -->
+                <div class="marquee-item"><i class="fa-solid fa-shield-halved"></i> <span>MÁS DE 57 AÑOS DE
+                        TRAYECTORIA</span></div>
+                <div class="marquee-item"><i class="fa-solid fa-gears"></i> <span>+1,500 PROYECTOS INDUSTRIALES</span>
                 </div>
-                <div class="marquee-item">
-                    <i class="fa-solid fa-building-circle-check"></i> <span>+3,000 INSTALACIONES SEGURAS</span>
-                </div>
-                <div class="marquee-item">
-                    <i class="fa-solid fa-certificate"></i> <span>100% GARANTÍA DE SATISFACCIÓN</span>
-                </div>
-                <div class="marquee-item">
-                    <i class="fa-solid fa-shield-halved"></i> <span>MÁS DE 57 AÑOS DE TRAYECTORIA</span>
-                </div>
-                <div class="marquee-item">
-                    <i class="fa-solid fa-gears"></i> <span>+1,500 PROYECTOS INDUSTRIALES</span>
-                </div>
-                <div class="marquee-item">
-                    <i class="fa-solid fa-building-circle-check"></i> <span>+3,000 INSTALACIONES SEGURAS</span>
-                </div>
-                <div class="marquee-item">
-                    <i class="fa-solid fa-certificate"></i> <span>100% GARANTÍA DE SATISFACCIÓN</span>
-                </div>
+                <div class="marquee-item"><i class="fa-solid fa-building-circle-check"></i> <span>+3,000 INSTALACIONES
+                        SEGURAS</span></div>
+                <div class="marquee-item"><i class="fa-solid fa-certificate"></i> <span>100% GARANTÍA DE
+                        SATISFACCIÓN</span></div>
             </div>
         </div>
     </div>
 
-    <!-- SECCIÓN SECTORES -->
+    <!-- SECCIÓN SECTORES (TARJETAS DE REVELACIÓN) -->
     <section id="sectores" class="sectores-section section bg-light">
         <div class="container">
             <div class="text-center reveal fade-bottom">
@@ -131,6 +127,7 @@
             </div>
 
             <div class="sector-cards-grid">
+                <!-- Industria -->
                 <div class="sector-card reveal fade-bottom delay-1">
                     <div class="sector-bg" style="background-image: url('assets/FondoCalderas.jpeg');"></div>
                     <div class="sector-content">
@@ -143,6 +140,7 @@
                     </div>
                 </div>
 
+                <!-- Comercial -->
                 <div class="sector-card reveal fade-bottom delay-2">
                     <div class="sector-bg" style="background-image: url('assets/ServiciosCalderas.jpeg');"></div>
                     <div class="sector-content">
@@ -155,6 +153,7 @@
                     </div>
                 </div>
 
+                <!-- Residencial -->
                 <div class="sector-card reveal fade-bottom delay-3">
                     <div class="sector-bg" style="background-image: url('assets/Mantenimiento-Calderas.png');"></div>
                     <div class="sector-content">
@@ -240,9 +239,9 @@
                 <div class="nosotros-carousel reveal fade-left delay-1">
                     <div class="swiper trayectoria-swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="assets/proyectocalderas1.png" alt="Proyecto"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas2.png" alt="Proyecto"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas3.png" alt="Proyecto"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas1.png" alt="Proyecto 1"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas2.png" alt="Proyecto 2"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas3.png" alt="Proyecto 3"></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -251,7 +250,7 @@
         </div>
     </section>
 
-    <!-- CONTACTO -->
+    <!-- CONTACTO CERCANO -->
     <section id="contacto" class="contact-section section">
         <div class="container">
             <div class="contact-card shadow-corp reveal fade-bottom">
@@ -272,7 +271,7 @@
                             <i class="fa-regular fa-envelope"></i>
                             <div class="text">
                                 <span>Contacto Institucional</span>
-                                <strong>contactocalentadorescalderas@gmail.com</strong>
+                                <strong>scalderas@yahoo.com.mx</strong>
                             </div>
                         </a>
                     </div>
@@ -286,7 +285,7 @@
         </div>
     </section>
 
-    <!-- FOOTER -->
+    <!-- FOOTER CORPORATIVO -->
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-about">
@@ -298,45 +297,37 @@
                 <ul>
                     <li><a href="#inicio">Inicio</a></li>
                     <li><a href="#sectores">Cobertura de Sectores</a></li>
-                    <li><a href="#servicios">Ingeniería y Servicios</a></li>
+                    <li><a href="privacidad.html">Aviso de Privacidad</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
-                <h4>CONTACTO & DIRECCIÓN</h4>
+                <h4>CONTACTO MATRIZ</h4>
                 <p><i class="fa-solid fa-location-dot"></i> Av. Vallejo 1307, GAM, CDMX</p>
                 <p><i class="fa-solid fa-phone"></i> 55 1503 7612</p>
             </div>
         </div>
         <div class="footer-bottom">
             <p>&copy; 2026 Calentadores Calderas. Todos los derechos reservados.</p>
-            <p class="credit">Desarrollo e Infraestructura Web por <a href="https://detech-dev.com" class="glow-link"
-                    target="_blank">DETECH</a></p>
+            <p class="credit">Desarrollo e Infraestructura Web por <a href="https://detech-dev.vercel.app/"
+                    class="glow-link" target="_blank">DETECH</a></p>
         </div>
     </footer>
 
-    <!-- WIDGET DE WHATSAPP FLOTANTE (ESTILO REALISTA) -->
+    <!-- WIDGET DE WHATSAPP REALISTA -->
     <div class="whatsapp-wrapper">
         <div class="whatsapp-float">
-            <!-- Burbuja estilo WhatsApp Real -->
             <div class="wa-message-bubble" id="wa-tooltip">
                 <span class="close-wa" id="close-wa" aria-label="Cerrar">&times;</span>
-
                 <div class="wa-message-header">Soporte Técnico</div>
-
                 <div class="wa-message-body">
                     ¡Mándanos mensaje y te responderemos a la brevedad!
                 </div>
-
                 <div class="wa-message-footer">
-                    <span id="wa-time">12:00 PM</span>
+                    <span id="wa-time"></span>
                     <i class="fa-solid fa-check-double wa-check"></i>
                 </div>
-
-                <!-- El piquito de la burbuja -->
                 <div class="wa-tail"></div>
             </div>
-
-            <!-- Ícono y enlace (Rojo corporativo) -->
             <a href="https://wa.me/5515037612" target="_blank" rel="noopener noreferrer" class="wa-icon"
                 aria-label="Abrir chat de WhatsApp">
                 <i class="fab fa-whatsapp"></i>
@@ -344,6 +335,26 @@
         </div>
     </div>
 
+    <!-- BANNER DE COOKIES -->
+    <div class="cookie-banner" id="cookie-banner">
+        <div class="cookie-content">
+            <div class="cookie-text">
+                <i class="fa-solid fa-cookie-bite"></i>
+                <p>
+                    Utilizamos cookies propias y de terceros para mejorar la experiencia de usuario y analizar el
+                    tráfico. Al continuar navegando, aceptas nuestra
+                    <a href="privacidad.html">Política de Privacidad y Cookies</a>.
+                </p>
+            </div>
+            <div class="cookie-actions">
+                <button class="btn btn-sm btn-primary" id="accept-cookies">Aceptar</button>
+                <button class="btn btn-sm btn-outline-white" style="border-color: #041E42; color: #041E42;"
+                    id="reject-cookies">Rechazar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
     <script src="script.js" defer></script>
 </body>
