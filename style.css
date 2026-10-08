@@ -746,11 +746,14 @@ nav a:hover::after {
     letter-spacing: 1px;
 }
 
+/* REGLA CORREGIDA PARA EL TEXTO DEL CORREO */
 .contact-btn .text strong {
     display: block;
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     color: var(--primary-color);
     font-weight: 700;
+    word-break: break-word;
+    overflow-wrap: break-word;
 }
 
 .contact-map iframe {
@@ -776,9 +779,13 @@ nav a:hover::after {
     margin-bottom: 4rem;
 }
 
+/* REGLA CORREGIDA PARA EL LOGO DEL FOOTER */
 .footer-logo {
     filter: brightness(0) invert(1);
     margin-bottom: 25px;
+    height: auto !important;
+    max-width: 100%;
+    object-fit: contain;
 }
 
 .footer-links h4,
@@ -1025,7 +1032,7 @@ nav a:hover::after {
 }
 
 /* =========================================
-   RESPONSIVE MULTIDISPOSITIVO (AQUÍ ESTÁN LOS CAMBIOS DEL HERO)
+   RESPONSIVE MULTIDISPOSITIVO 
    ========================================= */
 @media(max-width: 992px) {
     .sector-cards-grid {
@@ -1096,7 +1103,6 @@ nav a:hover::after {
         font-size: 1.5rem;
     }
 
-    /* MODIFICACIONES DEL HERO PARA CELULAR (Alineación izquierda y limpieza de tamaños) */
     .hero {
         text-align: left;
     }
@@ -1112,34 +1118,29 @@ nav a:hover::after {
         margin-bottom: 25px;
     }
 
-    /* Más aire abajo del subtítulo */
     .hero-content h1 {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
         margin-bottom: 20px;
         line-height: 1.1;
     }
 
-    /* Letra más pequeña */
     .hero-content p {
         font-size: 1rem;
         margin-bottom: 30px;
         max-width: 95%;
     }
 
-    /* Botones a la par y cargados a la izquierda lejos de WhatsApp */
     .hero-actions {
         justify-content: flex-start;
         flex-direction: row;
         flex-wrap: wrap;
-        gap: 10px;
+        gap: 12px;
     }
 
     .hero-actions .btn {
-        flex: 1 1 auto;
-        padding: 12px 15px;
-        font-size: 0.85rem;
-        text-align: center;
-        justify-content: center;
+        flex: 0 1 auto;
+        padding: 12px 20px;
+        font-size: 0.9rem;
     }
 
     .hero-overlay {
@@ -1148,6 +1149,11 @@ nav a:hover::after {
 
     .contact-content {
         padding: 40px 20px;
+    }
+
+    /* REGLA CORREGIDA PARA CELULAR: Texto más compacto en correos largos */
+    .contact-btn .text strong {
+        font-size: 0.95rem;
     }
 
     .footer-grid {
@@ -1159,7 +1165,6 @@ nav a:hover::after {
         justify-content: center;
     }
 
-    /* Marquee ajuste celular */
     .marquee-item {
         font-size: 1rem;
     }
@@ -1169,7 +1174,6 @@ nav a:hover::after {
         animation-duration: 15s;
     }
 
-    /* WhatsApp celular */
     .whatsapp-wrapper {
         bottom: 20px;
         right: 20px;
@@ -1199,7 +1203,6 @@ nav a:hover::after {
         top: -15px;
     }
 
-    /* Banner cookies celular */
     .cookie-content {
         flex-direction: column;
         align-items: flex-start;
