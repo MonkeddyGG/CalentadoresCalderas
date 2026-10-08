@@ -165,7 +165,7 @@ document.addEventListener('DOMContentLoaded', () => {
     if (cookieBanner && !localStorage.getItem('cookiesAccepted')) {
         setTimeout(() => {
             cookieBanner.classList.add('show');
-        }, 2000); // 2 segundos de retraso para no ser invasivo
+        }, 2000);
     }
 
     if (acceptCookiesBtn) {

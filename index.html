@@ -10,14 +10,17 @@
 
     <link rel="icon" type="image/png" href="assets/favicon-32x32.png">
 
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-LHD14NDGLD"></script>
+    <!-- Google tag (gtag.js) - CARGA DIFERIDA PARA MÁXIMO RENDIMIENTO -->
+    <script defer src="https://www.googletagmanager.com/gtag/js?id=G-LHD14NDGLD"></script>
     <script>
-        window.dataLayer = window.dataLayer || [];
-        function gtag() { dataLayer.push(arguments); }
-        gtag('js', new Date());
-        gtag('config', 'G-LHD14NDGLD');
+        window.addEventListener('load', function () {
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', 'G-LHD14NDGLD');
+        });
     </script>
+
     <!-- Etiqueta Canonica -->
     <link rel="canonical" href="https://calentadorescalderas.com.mx/" />
 
@@ -29,13 +32,16 @@
         rel="stylesheet">
 
     <!-- CARGA ASÍNCRONA DE SWIPER Y FONT AWESOME (Rendimiento) -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
-        onload="this.media='all'">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-        media="print" onload="this.media='all'">
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" as="style"
+        onload="this.onload=null;this.rel='stylesheet'">
     <noscript>
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     </noscript>
 
     <!-- PRECARGA DE LA IMAGEN LCP CON PRIORIDAD MÁXIMA -->
@@ -78,7 +84,7 @@
         </div>
     </header>
 
-    <!-- HERO SECTION (Con texto dinámico y control de zoom) -->
+    <!-- HERO SECTION -->
     <section id="inicio" class="hero">
         <div class="carousel">
             <div class="slide active" style="background-image: url('assets/Reparacion-Calderas.webp');"></div>
@@ -102,7 +108,7 @@
         </div>
     </section>
 
-    <!-- BANDA INFINITA (MARQUEE CORPORATIVO) -->
+    <!-- BANDA INFINITA (MARQUEE) -->
     <div class="trust-marquee-section">
         <div class="marquee-wrapper">
             <div class="marquee-track">
@@ -115,7 +121,7 @@
                         SEGURAS</span></div>
                 <div class="marquee-item"><i class="fa-solid fa-certificate"></i> <span>100% GARANTÍA DE
                         SATISFACCIÓN</span></div>
-                <!-- Set 2 (Duplicado para efecto infinito) -->
+                <!-- Set 2 -->
                 <div class="marquee-item"><i class="fa-solid fa-shield-halved"></i> <span>MÁS DE 57 AÑOS DE
                         TRAYECTORIA</span></div>
                 <div class="marquee-item"><i class="fa-solid fa-gears"></i> <span>+1,500 PROYECTOS INDUSTRIALES</span>
@@ -128,7 +134,7 @@
         </div>
     </div>
 
-    <!-- SECCIÓN SECTORES (TARJETAS DE REVELACIÓN) -->
+    <!-- SECCIÓN SECTORES -->
     <section id="sectores" class="sectores-section section bg-light">
         <div class="container">
             <div class="text-center reveal fade-bottom">
@@ -190,9 +196,11 @@
             </div>
 
             <div class="services-grid">
+                <!-- Venta -->
                 <div class="service-card reveal fade-bottom delay-1">
                     <div class="service-img">
-                        <img src="assets/Venta-Calderas.webp" alt="Venta de equipos" loading="lazy">
+                        <img src="assets/Venta-Calderas.webp" alt="Venta de equipos" width="400" height="250"
+                            loading="lazy">
                         <div class="service-badge">Ingeniería Comercial</div>
                     </div>
                     <div class="service-info">
@@ -204,9 +212,11 @@
                     </div>
                 </div>
 
+                <!-- Mantenimiento -->
                 <div class="service-card reveal fade-bottom delay-2">
                     <div class="service-img">
-                        <img src="assets/Caldera-Calderas.webp" alt="Mantenimiento preventivo" loading="lazy">
+                        <img src="assets/Caldera-Calderas.webp" alt="Mantenimiento preventivo" width="400" height="250"
+                            loading="lazy">
                         <div class="service-badge badge-blue">Pólizas Preventivas</div>
                     </div>
                     <div class="service-info">
@@ -218,9 +228,11 @@
                     </div>
                 </div>
 
+                <!-- Reparación -->
                 <div class="service-card reveal fade-bottom delay-3">
                     <div class="service-img">
-                        <img src="assets/Caldera-Reparada.webp" alt="Reparación urgente" loading="lazy">
+                        <img src="assets/Caldera-Reparada.webp" alt="Reparación urgente" width="400" height="250"
+                            loading="lazy">
                         <div class="service-badge badge-red">Soporte Crítico</div>
                     </div>
                     <div class="service-info">
@@ -250,9 +262,12 @@
                 <div class="nosotros-carousel reveal fade-left delay-1">
                     <div class="swiper trayectoria-swiper">
                         <div class="swiper-wrapper">
-                            <div class="swiper-slide"><img src="assets/proyectocalderas1.webp" alt="Proyecto 1"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas2.webp" alt="Proyecto 2"></div>
-                            <div class="swiper-slide"><img src="assets/proyectocalderas3.webp" alt="Proyecto 3"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas1.webp" alt="Proyecto 1"
+                                    width="400" height="300" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas2.webp" alt="Proyecto 2"
+                                    width="400" height="300" loading="lazy"></div>
+                            <div class="swiper-slide"><img src="assets/proyectocalderas3.webp" alt="Proyecto 3"
+                                    width="400" height="300" loading="lazy"></div>
                         </div>
                         <div class="swiper-pagination"></div>
                     </div>
@@ -300,7 +315,8 @@
     <footer class="site-footer">
         <div class="container footer-grid">
             <div class="footer-about">
-                <img src="assets/logo-calentadores-calderas.webp" alt="Logo Footer" width="200" class="footer-logo">
+                <img src="assets/logo-calentadores-calderas.webp" alt="Logo Footer" width="200" height="60"
+                    class="footer-logo" loading="lazy">
                 <p>El estándar de oro en soluciones térmicas en México. Integridad, fuerza e innovación desde 1969.</p>
             </div>
             <div class="footer-links">
@@ -366,6 +382,7 @@
     </div>
 
     <!-- Scripts -->
+    <!-- Cargamos swiper asíncronamente (ya lo hicimos arriba con CSS, aquí el JS) -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
     <script src="script.js" defer></script>
 </body>

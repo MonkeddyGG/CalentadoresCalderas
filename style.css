@@ -3,11 +3,8 @@
    ========================================= */
 :root {
     --primary-color: #041E42;
-    /* Azul Corporativo Oscuro */
     --secondary-color: #D32F2F;
-    /* Rojo Industrial Fuerte */
     --accent-color: #1565C0;
-    /* Azul Técnico de acento */
     --bg-light: #F3F4F6;
     --dark-color: #111827;
     --text-main: #374151;
@@ -312,7 +309,6 @@ nav a:hover::after {
     text-align: left;
     color: var(--white);
     overflow: hidden;
-    /* FIX: Evita desbordamiento del zoom */
 }
 
 .carousel,
@@ -1029,103 +1025,7 @@ nav a:hover::after {
 }
 
 /* =========================================
-   ESTILOS DE LA PÁGINA DE PRIVACIDAD
-   ========================================= */
-.legal-page header {
-    background: var(--primary-color);
-    position: relative;
-    padding: 15px 0;
-}
-
-.legal-page header .logo-title,
-.legal-page header nav a {
-    color: var(--white);
-}
-
-.legal-hero {
-    background: var(--primary-color);
-    padding: 80px 0 60px 0;
-    color: var(--white);
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.legal-hero h1 {
-    color: var(--white);
-    font-size: clamp(2rem, 4vw, 3rem);
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-}
-
-.legal-hero p {
-    color: var(--accent-color);
-    font-family: var(--font-heading);
-    letter-spacing: 2px;
-    text-transform: uppercase;
-}
-
-.legal-content-section {
-    padding: 3rem 0 6rem 0;
-}
-
-.legal-card {
-    background: var(--white);
-    padding: 60px;
-    border-radius: var(--radius-lg);
-    max-width: 900px;
-    margin: -40px auto 0 auto;
-    position: relative;
-    z-index: 10;
-    border-top: 5px solid var(--secondary-color);
-}
-
-.legal-block {
-    margin-bottom: 40px;
-}
-
-.legal-block:last-child {
-    margin-bottom: 0;
-}
-
-.legal-block h2 {
-    font-size: 1.5rem;
-    color: var(--primary-color);
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #E5E7EB;
-}
-
-.legal-block p {
-    color: var(--text-main);
-    line-height: 1.8;
-    margin-bottom: 15px;
-    font-size: 1.05rem;
-}
-
-.legal-block ul {
-    list-style: disc;
-    padding-left: 25px;
-    margin-bottom: 15px;
-    color: var(--text-main);
-}
-
-.legal-block li {
-    margin-bottom: 8px;
-    line-height: 1.6;
-}
-
-.legal-block a {
-    color: var(--accent-color);
-    font-weight: 600;
-}
-
-.legal-block a:hover {
-    text-decoration: underline;
-    color: var(--primary-color);
-}
-
-
-/* =========================================
-   RESPONSIVE (MEDIA QUERIES)
+   RESPONSIVE MULTIDISPOSITIVO
    ========================================= */
 @media(max-width: 992px) {
     .sector-cards-grid {
@@ -1276,19 +1176,5 @@ nav a:hover::after {
     .cookie-actions {
         width: 100%;
         justify-content: flex-end;
-    }
-
-    /* Privacidad celular */
-    .legal-card {
-        padding: 30px 20px;
-        margin-top: -20px;
-    }
-
-    .legal-block h2 {
-        font-size: 1.3rem;
-    }
-
-    .legal-block p {
-        font-size: 1rem;
     }
 }
