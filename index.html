@@ -28,9 +28,18 @@
         href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&family=Oswald:wght@400;500;600;700&display=swap"
         rel="stylesheet">
 
-    <!-- Swiper CSS & Font Awesome -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- CARGA ASÍNCRONA DE SWIPER Y FONT AWESOME (Rendimiento) -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" media="print"
+        onload="this.media='all'">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        media="print" onload="this.media='all'">
+    <noscript>
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    </noscript>
+
+    <!-- PRECARGA DE LA IMAGEN LCP CON PRIORIDAD MÁXIMA -->
+    <link rel="preload" as="image" href="assets/Reparacion-Calderas.webp" fetchpriority="high">
 
     <!-- Hoja de Estilos -->
     <link rel="stylesheet" href="style.css">
