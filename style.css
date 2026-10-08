@@ -112,7 +112,7 @@ ul {
     gap: 12px;
 }
 
-/* ANIMACIONES REVEAL (INTERSECTION OBSERVER) */
+/* ANIMACIONES REVEAL */
 .reveal {
     opacity: 0;
     visibility: hidden;
@@ -298,7 +298,7 @@ nav a:hover::after {
 }
 
 /* =========================================
-   HERO SECTION & TEXTO DINÁMICO
+   HERO SECTION
    ========================================= */
 .hero {
     position: relative;
@@ -1025,7 +1025,7 @@ nav a:hover::after {
 }
 
 /* =========================================
-   RESPONSIVE MULTIDISPOSITIVO
+   RESPONSIVE MULTIDISPOSITIVO (AQUÍ ESTÁN LOS CAMBIOS DEL HERO)
    ========================================= */
 @media(max-width: 992px) {
     .sector-cards-grid {
@@ -1096,16 +1096,49 @@ nav a:hover::after {
         font-size: 1.5rem;
     }
 
+    /* MODIFICACIONES DEL HERO PARA CELULAR (Alineación izquierda y limpieza de tamaños) */
     .hero {
-        text-align: center;
+        text-align: left;
     }
 
     .hero-content {
-        padding-left: 0;
-        margin: 0 auto;
+        padding-left: 5%;
+        padding-right: 5%;
+        margin: 0;
     }
 
+    .dynamic-hero-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    /* Más aire abajo del subtítulo */
+    .hero-content h1 {
+        font-size: 2.2rem;
+        margin-bottom: 20px;
+        line-height: 1.1;
+    }
+
+    /* Letra más pequeña */
+    .hero-content p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+        max-width: 95%;
+    }
+
+    /* Botones a la par y cargados a la izquierda lejos de WhatsApp */
     .hero-actions {
+        justify-content: flex-start;
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 10px;
+    }
+
+    .hero-actions .btn {
+        flex: 1 1 auto;
+        padding: 12px 15px;
+        font-size: 0.85rem;
+        text-align: center;
         justify-content: center;
     }
 
